@@ -1,6 +1,6 @@
 # Exercice 10.1
 Quel résultat cet algorithme produit-il ?
-```
+```C#
 Variable Truc en Caractère
 Début
 Ouvrir "Exemple.txt" sur 5 en Lecture
@@ -16,7 +16,7 @@ Cet algorithme écrit l'intégralité du fichier quot;Exemple.txt" à l'écran
 # Exercice 10.2
 Ecrivez l’algorithme qui produit un résultat similaire au précédent, mais le fichier texte "Exemple.txt" est cette fois de type délimité (caractère de délimitation : /). On produira à l'écran un affichage où pour des raisons esthétiques, ce caractère sera remplacé avec des espaces.
 
-```
+```C#
 Variable Truc en Caractère
 Variable i en Entier
 Debut
@@ -37,7 +37,7 @@ Fermer 5
 # Exercice 10.3
 On travaille avec le fichier du carnet d’adresses en champs de largeur fixe.
 Ecrivez un algorithme qui permet à l’utilisateur de saisir au clavier un nouvel individu qui sera ajouté à ce carnet d’adresses.
-```
+```C#
 Variables Nom * 20, Prénom * 17, Tel * 10, Mail * 20, Lig en Caractère
 Debut
 Ecrire "Entrez le nom : "
@@ -60,7 +60,7 @@ Même question, mais cette fois le carnet est supposé être déjà trié par or
 
 Là, comme indiqué dans le cours, on passe par un tableau de strutures en mémoire vive, ce qui est la technique la plus fréquemment employée. Le tri - qui est en fait un simple test - sera effectué sur le premier champ (nom).
 
-```
+```C#
 Structure Bottin
   Nom en Caractère * 20
   Prénom en Caractère * 15
@@ -82,7 +82,7 @@ Lire Nouveau.Mail
 ```
 On recopie l'intégralité de "Adresses" dans MesPotes[]. Et après tout, c'est l'occasion : quand on tombe au bon endroit, on insère subrepticement notre nouveau copain dans le tableau.
 
-```
+```C#
 Ouvrir "Adresse.txt" sur 1 pour Lecture
 i ← -1
 inséré ← Faux
@@ -108,7 +108,7 @@ FinSi
 ```
 Et le tour est quasiment joué. Il ne reste plus qu'à rebalancer tel quel l'intégralité du tableau MesPotes dans le fichier, en écrasant l'ancienne version.
 
-```
+```C#
 Ouvrir quot;Adresse.txt" sur 1 pour Ecriture
 Pour j ← 0 à i
   EcrireFichier 1, MesPotes[j]
@@ -122,7 +122,7 @@ Ecrivez un algorithme qui permette de modifier un renseignement (pour simplifier
 
 C'est un peu du même tonneau que ce qu'on vient de faire, à quelques variantes près. Il y a essentiellement une petite gestion de flag pour faire bonne mesure.
 
-```
+```C#
 Structure Bottin
   Nom en Caractère * 20
   Prénom en Caractère * 15
@@ -141,7 +141,7 @@ Ecrire "Entrez le nouveau nom : "
 Lire Nouveau
 ```
 On recopie l'intégralité de "Adresses" dans Fic, tout en recherchant le clampin. Si on le trouve, on procède à la modification.
-```
+```C#
 Ouvrir “Adresse.txt” sur 1 pour Lecture
 i ← -1
 Trouvé ← Faux
@@ -158,7 +158,7 @@ FinTantQue
 Fermer 1
 ```
 On recopie ensuite l'intégralité de Fic dans "Adresse"
-```
+```C#
 Ouvrir "Adresse.txt" sur 1 pour Ecriture
 Pour j ← 0 à i
   EcrireFichier 1, MesPotes[j]
@@ -166,7 +166,7 @@ j Suivant
 Fermer 1
 ```
 Et un petit message pour finir !
-```
+```C#
 Si Trouvé Alors
   Ecrire "Modification effectuée"
 Sinon
@@ -180,7 +180,7 @@ Ecrivez un algorithme qui trie les individus du carnet d’adresses par ordre al
 
 Là, c'est un tri sur un tableau de structures, rien de plus facile. Et on est bien content de disposer des structures, autrement dit de ne se coltiner qu'un seul tableau...
 
-```
+```C#
 Structure Bottin Nom en Caractère * 20
 Prénom en Caractère * 15
 Tel en caractère * 10
@@ -192,7 +192,7 @@ Variables i, j en Numérique
 Debut
 ```
 On recopie l'intégralité de "Adresses" dans MesPotes...
-```
+```C#
 Ouvrir "Adresse.txt" sur 1 pour Lecture
 i ← -1
 Tantque Non EOF(1)
@@ -203,7 +203,7 @@ FinTantQue
 Fermer 1
 ```
 On trie le tableau selon l'algorithme de tri par insertion déjà étudié, en utilisant le champ Nom de la structure :
-```
+```C#
 Pour j ← 0 à i - 1
   Mini ← MesPotes[j]
   posmini ← j
@@ -218,7 +218,7 @@ Pour j ← 0 à i - 1
 j suivant
 ```
 On recopie ensuite l'intégralité du tableau dans "Adresse"
-```
+```C#
 Ouvrir "Adresse.txt" sur 1 pour Ecriture
 Pour j ← 0 à i
   EcrireFichier 1, MesPotes[j]
@@ -231,24 +231,33 @@ Soient Toto.txt et Tata.txt deux fichiers dont les enregistrements ont la même 
 
 Bon, celui-là est tellement idiot qu'on n'a même pas besoin de passer par des tableaux en mémoire vive.
 
-```
-Variable Lig en Caractère
+```C#
+Variable Lig en Caractère  // Variable pour stocker temporairement une ligne lue
+
 Début
-Ouvrir "Tutu.txt" sur 1 pour Ajout
-Ouvrir “Toto.txt” sur 2 pour Lecture
-Tantque Non EOF(2)
-  LireFichier 2, Lig
-  EcrireFichier 1, Lig
-FinTantQue
-Fermer 2
-Ouvrir “Tata.txt” sur 3 pour Lecture
-Tantque Non EOF(3)
-  LireFichier 3, Lig
-  EcrireFichier 1, Lig
-FinTantQue
-Fermer 3
-Fermer 1
+  Ouvrir "Tutu.txt" sur 1 pour Ajout  // Ouvre le fichier "Tutu.txt" en mode ajout (si le fichier n'existe pas, il est créé)
+  Ouvrir "Toto.txt" sur 2 pour Lecture  // Ouvre le fichier "Toto.txt" en mode lecture
+
+  // Lire chaque ligne de Toto.txt et l'écrire dans Tutu.txt
+  Tantque Non EOF(2)  // Tant qu'il n'y a pas de fin de fichier dans Toto.txt
+    LireFichier 2, Lig  // Lire une ligne de Toto.txt dans la variable Lig
+    EcrireFichier 1, Lig  // Écrire cette ligne dans Tutu.txt
+  FinTantQue
+
+  Fermer 2  // Ferme le fichier Toto.txt
+
+  Ouvrir "Tata.txt" sur 3 pour Lecture  // Ouvre le fichier "Tata.txt" en mode lecture
+
+  // Lire chaque ligne de Tata.txt et l'écrire à la suite dans Tutu.txt
+  Tantque Non EOF(3)  // Tant qu'il n'y a pas de fin de fichier dans Tata.txt
+    LireFichier 3, Lig  // Lire une ligne de Tata.txt dans la variable Lig
+    EcrireFichier 1, Lig  // Écrire cette ligne dans Tutu.txt
+  FinTantQue
+
+  Fermer 3  // Ferme le fichier Tata.txt
+  Fermer 1  // Ferme le fichier Tutu.txt
 Fin
+
 ```
 
 # Exercice 10.8
@@ -256,7 +265,7 @@ Ecrire un algorithme qui supprime dans notre carnet d'adresses tous les individu
 
 On va éliminer les mauvaises entrées dès la recopie : si l'enregistrement ne présente pas un mail valide, on l'ignore, sinon on le copie dans le tableau.
 
-```
+```C#
 Structure Bottin
   Nom en Caractère * 20
   Prénom en Caractère * 15
@@ -270,7 +279,7 @@ Debut
 ```
 On recopie "Adresses" dans MesPotes en testant le mail...
 
-```
+```C#
 Ouvrir "Adresse.txt" sur 1 pour Lecture
 i ← -1
 Tantque Non EOF(1)
@@ -291,7 +300,7 @@ Fermer 1
 ```
 On recopie ensuite l'intégralité de Fic dans "Adresse"
 
-```
+```C#
 Ouvrir "Adresse.txt" sur 1 pour Ecriture
 Pour j ← 0 à i
   EcrireFichier 1, MesPotes[j]
@@ -306,7 +315,7 @@ On veut mémoriser dans un tableau, puis afficher à l'écran, le total de vente
 
 Une fois de plus, le passage par un tableau de structures est une stratégie commode. Attention toutefois, comme il s'agit d'un fichier texte, tout est stocké en caractère. Il faudra donc convertir en numérique les caractères représentant les ventes, pour pouvoir effectuer les calculs demandés. Pour le traitement, il y a deux possibilités. Soit on recopie le fichier à l'identique dans un premier tableau, et on traite ensuite ce tableau pour faire la somme par vendeur. Soit on fait le traitement directement, dès la lecture du fichier. C'est cette option qui est choisie dans ce corrigé.
 
-```
+```C#
 Structure Vendeur
   Nom en Caractère * 20
   Montant en Numérique
@@ -318,7 +327,7 @@ Variables Somme, Vente en Numérique
 On balaye le fichier en faisant nos additions.
 Dès que le nom a changé (on est passé au vendeur suivant), on range le résultat et on remet tout à zéro
 
-```
+```C#
 Debut
 Ouvrir "Ventes.txt” sur 1 pour Lecture
 i ← -1
@@ -343,7 +352,7 @@ FinTantQue
 
 Et n'oublions pas un petit tour de plus pour le dernier de ces messieurs-dames…
 
-```
+```C#
 i ← i + 1
 Redim MesVendeurs[i]
 MesVendeurs[i].Nom ← NomPrec
@@ -353,7 +362,7 @@ Fermer 1
 
 Pour terminer, on affiche le tableau à l'écran
 
-```
+```C#
 Pour j ← 0 à i
   Ecrire MesVendeurs[j]
 j suivant

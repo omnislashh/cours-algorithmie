@@ -1,6 +1,6 @@
 # Exercice 6.1
 Ecrire un algorithme qui déclare et remplisse un tableau de 7 valeurs numériques en les mettant toutes à zéro.
-```
+```C#
 Tableau Truc[6] en Numérique
 Variable i en Numérique
 Debut
@@ -12,7 +12,7 @@ Fin
 
 # Exercice 6.2
 Ecrire un algorithme qui déclare et remplisse un tableau contenant les six voyelles de l’alphabet latin.
-```
+```C#
 Tableau Truc[5] en Caractère
 Debut
 Truc[0] ← "a"
@@ -26,7 +26,7 @@ Fin
 
 # Exercice 6.3
 Ecrire un algorithme qui déclare un tableau de 9 notes, dont on fait ensuite saisir les valeurs par l’utilisateur.
-```
+```C#
 Tableau Notes[8] en Numérique
 Variable i en Numérique
 Pour i ← 0 à 8
@@ -40,7 +40,7 @@ Fin
 Que produit l’algorithme suivant ?  
 Tableau Nb[5] en Entier  
 Variable i en Entier  
-```
+```C#
 Début
 Pour i ← 0 à 5
   Nb[i] ← i * i
@@ -55,7 +55,7 @@ Peut-on simplifier cet algorithme avec le même résultat ?
 Cet algorithme remplit un tableau avec six valeurs : 0, 1, 4, 9, 16, 25.
 Il les écrit ensuite à l’écran. Simplification :
 
-```
+```C#
 Tableau Nb[5] en Numérique
 Variable i en Numérique
 Début
@@ -68,7 +68,7 @@ Fin
 
 # Exercice 6.5
 Que produit l’algorithme suivant ?
-```
+```C#
 Tableau N[6] en Entier
 Variables i, k en Entier
 Début
@@ -86,7 +86,7 @@ Peut-on simplifier cet algorithme avec le même résultat ?
 Cet algorithme remplit un tableau avec les sept valeurs : 1, 3, 5, 7, 9, 11, 13.
 Il les écrit ensuite à l’écran. Simplification :  
 
-```
+```C#
 Tableau N[6] en Numérique
 Variables i, k en Numérique
 Début
@@ -101,7 +101,7 @@ Fin
 
 # Exercice 6.6
 Que produit l’algorithme suivant ?
-```
+```C#
 Tableau Suite[7] en Entier
 Variable i en Entier
 Début
@@ -120,7 +120,7 @@ Cet algorithme remplit un tableau de 8 valeurs : 1, 1, 2, 3, 5, 8, 13, 21
 # Exercice 6.7
 Ecrivez la fin de l’algorithme 6.3 afin que le calcul de la moyenne des notes soit effectué et affiché à l’écran.
 
-```
+```C#
 Variable S en Numérique
 Tableau Notes[8] en Numérique
 Variable i en Numérique
@@ -138,34 +138,42 @@ Fin
 # Exercice 6.8
 Ecrivez un algorithme permettant à l’utilisateur de saisir un nombre quelconque de valeurs, qui devront être stockées dans un tableau. L’utilisateur doit donc commencer par entrer le nombre de valeurs qu’il compte saisir. Il effectuera ensuite cette saisie. Enfin, une fois la saisie terminée, le programme affichera le nombre de valeurs négatives et le nombre de valeurs positives.
 
-```
-Variables Nb, Nbpos, Nbneg en Numérique
-Tableau T[] en Numérique
-Variable i en Numérique
+```C#
+Variables Nb, Nbpos, Nbneg en Numérique    // Déclaration des variables : Nb pour le nombre de valeurs, Nbpos pour le nombre de valeurs positives, Nbneg pour le nombre de valeurs négatives
+Tableau T[] en Numérique    // Déclaration d'un tableau T pour stocker les valeurs saisies
+Variable i en Numérique    // Variable d'index pour la boucle
+
 Debut
-Ecrire "Entrez le nombre de valeurs :"
-Lire Nb
-Redim T[Nb-1]
-Nbpos ← 0
-Nbneg ← 0
-Pour i ← 0 à Nb - 1
-  Ecrire "Entrez le nombre n° ", i + 1
-  Lire T[i]
-  Si T[i] > 0 alors
-    Nbpos ← Nbpos + 1
-  Sinon
-    Nbneg ← Nbneg + 1
-  Finsi
-i Suivant
-Ecrire "Nombre de valeurs positives : ", Nbpos
-Ecrire "Nombre de valeurs négatives : ", Nbneg
-Fin
+  Ecrire "Entrez le nombre de valeurs :"    // Demander à l'utilisateur combien de valeurs il souhaite entrer
+  Lire Nb    // Lire la quantité de valeurs à entrer
+  Redim T[Nb-1]    // Redimensionner le tableau T pour qu'il ait la taille du nombre de valeurs que l'utilisateur va entrer
+
+  Nbpos ← 0    // Initialiser le compteur des valeurs positives à 0
+  Nbneg ← 0    // Initialiser le compteur des valeurs négatives à 0
+
+  Pour i ← 0 à Nb - 1    // Démarrer une boucle pour chaque valeur à saisir (de 0 à Nb-1)
+    Ecrire "Entrez le nombre n° ", i + 1    // Afficher un message pour indiquer à l'utilisateur quelle valeur il doit saisir
+    Lire T[i]    // Lire la valeur saisie et la stocker dans le tableau T à l'indice i
+
+    Si T[i] > 0 alors    // Si la valeur saisie est positive
+      Nbpos ← Nbpos + 1    // Incrémenter le compteur des valeurs positives
+    Sinon    // Sinon (si la valeur est négative ou nulle)
+      Nbneg ← Nbneg + 1    // Incrémenter le compteur des valeurs négatives
+    Finsi    // Fin de la condition
+
+  i Suivant    // Passer à l'itération suivante de la boucle
+
+  Ecrire "Nombre de valeurs positives : ", Nbpos    // Afficher le nombre total de valeurs positives
+  Ecrire "Nombre de valeurs négatives : ", Nbneg    // Afficher le nombre total de valeurs négatives
+
+Fin    // Fin de l'algorithme
+
 ```
 
 # Exercice 6.9
 Ecrivez un algorithme calculant la somme des valeurs d’un tableau (on suppose que le tableau a été préalablement saisi).
 
-```
+```C#
 Variables i, Som, N en Numérique
 Tableau T[] en Numérique
 Debut
@@ -190,7 +198,7 @@ Tableau 2 :
 Tableau à constituer :  
 11	14	12	11	2	8	11	10
 
-```
+```C#
 Variables i, N en Numérique
 Tableaux T1[], T2[], T3[] en Numérique
 Debut
@@ -214,27 +222,31 @@ Tableau 2 :
 Le Schtroumpf sera :  
 3 * 4 + 3 * 8 + 3 * 7 + 3 * 12 + 6 * 4 + 6 * 8 + 6 * 7 + 6 * 12 = 279  
 
-```
-Variables i, j, N1, N2, S en Numérique
-Tableaux T1[], T2[] en Numérique
+```C#
+Variables i, j, N1, N2, S en Numérique    // Déclaration des variables : i et j pour les indices des boucles, N1 et N2 pour les tailles des tableaux, S pour la somme (schtroumpf)
+Tableaux T1[], T2[] en Numérique    // Déclaration des tableaux T1 et T2 qui contiennent les éléments saisis
+
 Debut
-… On ne programme pas la saisie des tableaux T1 et T2.
-On suppose que T1 possède N1 éléments, et que T2 en possède T2)
-…
-S ← 0
-Pour i ← 0 à N1 – 1
-  Pour j ← 0 à N2 – 1
-    S ← S + T1[i] * T2[j]
-  j Suivant
-i Suivant
-Ecrire "Le schtroumpf est : ", S
-Fin
+  // On suppose que les tableaux T1 et T2 sont déjà remplis et que N1 et N2 sont les tailles respectives des tableaux.
+  
+  S ← 0    // Initialisation de la variable S à 0. Elle servira à stocker la somme (schtroumpf)
+
+  Pour i ← 0 à N1 – 1    // Première boucle pour parcourir chaque élément du tableau T1
+    Pour j ← 0 à N2 – 1    // Deuxième boucle pour parcourir chaque élément du tableau T2
+      S ← S + T1[i] * T2[j]    // On ajoute au schtroumpf le produit de T1[i] et T2[j]
+    j Suivant    // Fin de la boucle interne pour j
+  i Suivant    // Fin de la boucle externe pour i
+  
+  Ecrire "Le schtroumpf est : ", S    // Affichage du résultat final, c'est-à-dire la somme des produits
+
+Fin    // Fin de l'algorithme
+
 ```
 
 # Exercice 6.12
 Ecrivez un algorithme qui permette la saisie d’un nombre quelconque de valeurs, sur le principe de l’ex 6.8. Toutes les valeurs doivent être ensuite augmentées de 1, et le nouveau tableau sera affiché à l’écran.
 
-```
+```C#
 Variables Nb, i en Numérique
 Tableau T[] en Numérique
 Debut
@@ -255,7 +267,7 @@ Fin
 
 # Exercice 6.13
 Ecrivez un algorithme permettant, toujours sur le même principe, à l’utilisateur de saisir un nombre déterminé de valeurs. Le programme, une fois la saisie terminée, renvoie la plus grande valeur en précisant quelle position elle occupe dans le tableau. On prendra soin d’effectuer la saisie dans un premier temps, et la recherche de la plus grande valeur du tableau dans un second temps.
-```
+```C#
 Variables i, Nb, Posmaxi en Numérique
 Tableau T[] en Numérique
 Ecrire "Entrez le nombre de valeurs :"
@@ -278,7 +290,7 @@ Fin
 # Exercice 6.14
 Toujours et encore sur le même principe, écrivez un algorithme permettant, à l’utilisateur de saisir les notes d'une classe. Le programme, une fois la saisie terminée, renvoie le nombre de ces notes supérieures à la moyenne de la classe.
 
-```
+```C#
 Variables Nb, i, Som, Moy, Nbsup en Numérique
 Tableau T[] en Numérique
 Debut

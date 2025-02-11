@@ -1,6 +1,6 @@
 # Exercice 2.1
 Quel résultat produit le programme suivant ?
-```
+```C#
 Variables val, double numériques
 Début
 Val ← 231
@@ -14,7 +14,7 @@ On verra apparaître à l’écran 231, puis 462 (qui vaut 231 * 2)
 
 # Exercice 2.2
 Ecrire un programme qui demande un nombre à l’utilisateur, puis qui calcule et  affiche le carré de ce nombre.
-```
+```C#
 Variables nb, carr en Entier
 Début
 Ecrire "Entrez un nombre :"
@@ -33,7 +33,7 @@ machine : Quel est votre prénom ?
 utilisateur : Marie-Cunégonde
 machine : Bonjour, Marie Cunégonde !
 
-```
+```C#
 Variable prenom en Caractere
 Début
 Ecrire "Quel est votre prenom ?"
@@ -44,7 +44,7 @@ Fin
 # Exercice 2.4
 Ecrire un programme qui lit le prix HT d’un article, le nombre d’articles et le taux de TVA, et qui fournit le prix total TTC correspondant. Faire en sorte que des libellés apparaissent clairement.
 
-```
+```C#
 Variables nb, pht, ttva, pttc en Numérique
 Début
 Ecrire "Entrez le prix hors taxes :"
