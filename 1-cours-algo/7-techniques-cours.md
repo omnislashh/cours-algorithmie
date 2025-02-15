@@ -63,7 +63,7 @@ i suivant
 Une variante :
 On peut imaginer une légère variante à cet algorithme, qui correspond à une très légère simplification. Jusqu'à présent, lorsqu'on cherchait à positionner la case numéro i, on parcourait tout le tableau à partir de la case i+1, et c'est qu'après avoir localisé la valeur la plus petite qu'on procédait à l'échange. Mais, après tout, on pourrait tout aussi bien effectuer cet échange au fur et à mesure, à chaque fois qu'on trouve une valeur plus petite.
 On va écrire l'algorithme de cette variante dans un instant, mais auparavant, rien ne saurait nous priver du spectacle assez étonnant de cette variante mise en scène et en musique par une sympathique troupe de danse folklorique hongroise, réquisitionnée pour la bonne cause par une fac d'informatique. Attention, c'est un régal pour les yeux et les neurones, mais ça pique un peu les oreilles quand même :  
-
+[video](https://www.youtube.com/watch?v=Ns4TPTC8whw&t=3s)
   
 Revenons (ouf) dans le monde du silence, et écrivons l'algorithme correspondant à cette variante :
 boucle principale : le point de départ se décale à chaque tour
