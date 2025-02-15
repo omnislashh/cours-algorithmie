@@ -189,7 +189,7 @@ Et maintenant, nous en arrivons à la formule magique : tri de tableau + flag = 
 L’idée de départ du tri à bulles consiste à se dire qu’un tableau trié en ordre croissant, c’est un tableau dans lequel tout élément est plus petit que celui qui le suit. Cette constatation percutante semble digne de M. de Lapalisse, un ancien voisin à moi. Mais elle est plus profonde – et plus utile - qu’elle n’en a l’air.  
 En effet, prenons chaque élément d’un tableau, et comparons-le avec l’élément qui le suit. Si l’ordre n’est pas bon, on permute ces deux éléments. Et on recommence jusqu’à ce que l’on n’ait plus aucune permutation à effectuer. Les éléments les plus grands « remontent » ainsi peu à peu vers les dernières places, ce qui explique la charmante dénomination de « tri à bulle ». Comme quoi l’algorithmique n’exclut pas un minimum syndical de sens poétique.  
 Et à l'appui de cette dernière affirmation, s'il en était besoin, nous retrouvons les joyeux drilles transylvaniens, qui sur un rythme endiablé, nous font cette fois une démonstration de tri à bulles.
-  
+[video](https://www.youtube.com/watch?v=lyZQPjUT5B4&t=4s)    
 
 
 Toujours aussi bluffant, hein ?  
